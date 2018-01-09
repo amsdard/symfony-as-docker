@@ -1,0 +1,13 @@
+{
+    "aliases": ["as-docker"],
+    "copy-from-recipe": {
+        "files/docker/": "docker/",
+        "files/deploy/": "deploy/",
+        "files/Yakefile": "Yakefile",
+        "files/docker-compose.yml": "docker-compose.yml",
+        "files/README.md": "README.md"
+    },
+    "gitignore": [
+        "/docker/*/*.env"
+    ]
+} 
