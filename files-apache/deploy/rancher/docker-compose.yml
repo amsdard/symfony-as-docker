@@ -13,12 +13,13 @@ services:
       io.rancher.container.pull_image: always
       traefik.alias: {name}
   mysql:
-    image: mariadb
+    image: mariadb:10
     stdin_open: true
     volumes:
     - {name}-mysql-var-lib-mysql:/var/lib/mysql
     tty: true
   redis:
-    image: redis:alpine
+    image: redis:4-alpine
+    command: 'redis-server --save "" --appendonly no'
     stdin_open: true
     tty: true

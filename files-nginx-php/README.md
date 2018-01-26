@@ -1,7 +1,7 @@
 {name}
 ========================
 * [local] {name}.test
-* [dev] {name}.test.amsdard.io
+* [dev] {name}.app.amsdard.io
 * [live] 
 
 Requirements
@@ -15,6 +15,7 @@ Run project
 ```
 yake configure
 yake up
+yake install
 ```
 * run `yake encore dev --watch` (or `npm run watch`) in background to work with assets
 * make sure `{name}.test` domain is routed to Your localhost

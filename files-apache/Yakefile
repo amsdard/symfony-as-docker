@@ -30,16 +30,21 @@ build: docker-compose build --pull $CMD
 
 # prepare & build & push to hub.amsdard.io, ie: `yake deploy php`
 deploy:
-  - $BIN encore production
   - $BIN build $CMD
   - docker-compose push $CMD
+
+install:
+  - $BIN composer install
+  - $BIN yarn install
 
 # Seeds database with sample user and site - for one time use per deployment.
 populate:
 
 # Fresh installation process - to be run one time
 configure:
+   - "[[ ! -f .env ]] && cp .env.dist .env"
    - "[[ ! -f docker/mysql/config.env ]] && cp docker/mysql/config.env.dist docker/mysql/config.env"
+   - "[[ ! -d vendor ]] && mkdir vendor"
    - curl -fsSL 'https://getcomposer.org/composer.phar' -o ./composer.phar
 
 # default values
