@@ -3,7 +3,7 @@ version: '3'
 services:
   redis:
     image: redis:4-alpine
-    container_name: redis.{name}.prod
+    container_name: prod.redis.{name}.docker
     command: 'redis-server --save "" --appendonly no'
     stdin_open: true
     tty: true
@@ -13,7 +13,7 @@ services:
 
   mysql:
     image: mariadb:10
-    container_name: mysql.{name}.prod
+    container_name: prod.mysql.{name}.docker
     stdin_open: true
     tty: true
     networks:
@@ -26,7 +26,7 @@ services:
 
   webapp:
     image: amsdard.io/{name}/webapp:1.0
-    container_name: webapp.{name}.prod
+    container_name: prod.webapp.{name}.docker
     networks:
       - global
     stdin_open: true

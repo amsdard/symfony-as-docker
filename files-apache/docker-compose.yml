@@ -3,7 +3,7 @@ version: '3'
 services:
   redis:
     image: redis:4-alpine
-    container_name: redis.{name}.test
+    container_name: redis.{name}.docker
     command: 'redis-server --save "" --appendonly no'
     stdin_open: true
     tty: true
@@ -13,7 +13,7 @@ services:
 
   mysql:
     image: mariadb:10
-    container_name: mysql.{name}.test
+    container_name: mysql.{name}.docker
     stdin_open: true
     tty: true
     networks:
@@ -21,12 +21,12 @@ services:
     env_file:
        - ./docker/mysql/config.env
     volumes:
-       - ~/data/mysql.{name}.test:/var/lib/mysql
+       - ~/data/mysql.{name}.docker:/var/lib/mysql
     restart: always
 
   webapp:
     image: amsdard.io/{name}/webapp:1.0
-    container_name: webapp.{name}.test
+    container_name: webapp.{name}.docker
     build:
         context: ./
         dockerfile: ./docker/webapp/Dockerfile
