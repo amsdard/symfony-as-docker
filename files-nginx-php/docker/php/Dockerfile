@@ -2,15 +2,15 @@ FROM amsdard/php:7
 
 ENV WORKDIR=/opt
 
-# build data
+# build data = the order do matter
 RUN date > /builddate && mkdir $WORKDIR/var
-COPY ./config $WORKDIR/config
+COPY ./vendor $WORKDIR/vendor
 COPY ./bin $WORKDIR/bin
-COPY ./src $WORKDIR/src
 COPY ./templates $WORKDIR/templates
 COPY ./translations $WORKDIR/translations
-COPY ./public/index.php $WORKDIR/public/index.php
-COPY ./vendor $WORKDIR/vendor
+COPY ./config $WORKDIR/config
+COPY ./public $WORKDIR/public
+COPY ./src $WORKDIR/src
 COPY ./composer.json $WORKDIR
 
 RUN chown 1000:1000 -R /opt
