@@ -9,7 +9,7 @@ COPY ./bin $WORKDIR/bin
 COPY ./templates $WORKDIR/templates
 COPY ./translations $WORKDIR/translations
 COPY ./config $WORKDIR/config
-COPY ./public $WORKDIR/public
+COPY ./public/index.php $WORKDIR/public/index.php
 COPY ./src $WORKDIR/src
 COPY ./composer.json $WORKDIR
 
