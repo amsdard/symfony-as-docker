@@ -1,19 +1,19 @@
 AS docker - Symfony (flex)
 ========================
-implement Docker into Your Symfony (^4.0) project using flex
+implement Docker into your Symfony (^4.0) project using flex
 
 
 Requirements
 ---
- * configure Your local [projects enrironment](https://bitbucket.org/as-docker/projects-environment)
+ * configure your local [projects enrironment](https://bitbucket.org/as-docker/projects-environment)
  * [optional] install composer globally [global composer command](https://hub.docker.com/r/amsdard/composer/)
  * make sure You have [YAKE](https://yake.amsdard.io/) installed
  * symfony ^4.0 with flex and basic components (see Full sample) installed
 
 
-Install
+Install (when you have already an existing project)
 ---
-Download package by composer (or git clone to Your `~/Projects` directory)
+In your project directory, download the package by composer (or git clone to your `~/Projects` directory)
 ```
 composer require amsdard/symfony-as-docker
 ```
@@ -33,14 +33,14 @@ composer require symfony/apache-pack
 ```
 
 
-Install - Full sample
+Install - Full sample (when you install a new project)
 ---
-create a new project
+In your `~/Projects` directory, create a new project (a new `my_project` directory will be created)
 ```
 composer create-project symfony/skeleton my_project
 ```
 
-allow to use community contrib
+Go to your `~/Projects/my_project` and run the following command to allow using a community contrib
 ```
 composer config extra.symfony.allow-contrib true
 ```
@@ -62,7 +62,7 @@ yake yarn install
 yake configure
 yake up
 ```
-
+now you can run `yake console make:controller Home` and go to `http://my_project.test/home`
 
 How it works
 ---
@@ -87,8 +87,8 @@ How it works
     └── php
         └── Dockerfile
 ```
-* Your project directory name will be filled as local domain name and docker image namespace (see `docker-compose.yml`)
-* new rules will be added to Your `.gitignore` file: 
+* your project directory name will be filled as local domain name and docker image namespace (see `docker-compose.yml`)
+* new rules will be added to your `.gitignore` file: 
   * `/composer.phar` internal project composer
   * `/docker/*/*.env` container ENV
  

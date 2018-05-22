@@ -6,7 +6,7 @@
 
 Requirements
 ---
- * configure Your local [projects enrironment](https://bitbucket.org/as-docker/projects-environment)
+ * configure your local [projects enrironment](https://bitbucket.org/as-docker/projects-environment)
  * make sure You have [YAKE](https://yake.amsdard.io/) installed
 
 
@@ -18,7 +18,7 @@ yake up
 yake install
 ```
 * run `yake encore dev --watch` (or `npm run watch`) in background to work with assets
-* make sure `{name}.test` domain is routed to Your localhost
+* make sure `{name}.test` domain is routed to your localhost
 
 
 Additional info

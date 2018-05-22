@@ -1,5 +1,5 @@
 php: docker-compose exec php entrypoint php $CMD
-console: $BIN php ./bin/console -e=$ENV $CMD
+console: $BIN php ./bin/console $CMD
 composer: $BIN php ./composer.phar --optimize-autoloader $CMD
 node: "docker run -it --rm -w /usr/src/app
       -v $(pwd):/usr/src/app -v ~/.docker-node-cache:/home/node/cache -v ~/.ssh:/home/node/.ssh
