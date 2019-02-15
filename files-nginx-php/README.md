@@ -44,6 +44,6 @@ yake deploy php
 yake deploy nginx
 ```
 * import `./deploy/prod/docker-compose.yml` into server + copy ENV files from `docker` directory
-* `docker-compose pull --parallel --quiet`
+* `docker-compose pull --quiet`
 * `docker-compose up -d --force-recreate`
 

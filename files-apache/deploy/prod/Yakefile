@@ -3,7 +3,7 @@ up:
   - docker-compose up -d --force-recreate $CMD
 
 restart:
-  - docker-compose pull --parallel --quiet
+  - docker-compose pull --quiet
   - $BIN up
 
 _config:

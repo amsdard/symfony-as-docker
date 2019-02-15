@@ -2,7 +2,7 @@ version: '3'
 
 services:
   redis:
-    image: redis:4-alpine
+    image: redis:5-alpine
     container_name: redis.{name}.docker
     command: 'redis-server --save "" --appendonly no'
     stdin_open: true
@@ -37,7 +37,7 @@ services:
     env_file:
        - ./.env
     labels:
-       traefik.frontend.rule: "Host:{subdomain}.{name}.test,{name}.test"
+       traefik.frontend.rule: "HostRegexp:{subdomain}.{name}.test,{name}.test"
     volumes:
        - ./:/opt:cached
        - ./docker/webapp:/etc/apache2/sites-enabled

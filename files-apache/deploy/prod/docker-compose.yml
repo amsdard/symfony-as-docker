@@ -2,7 +2,7 @@ version: '3'
 
 services:
   redis:
-    image: redis:4-alpine
+    image: redis:5-alpine
     container_name: prod.redis.{name}.docker
     command: 'redis-server --save "" --appendonly no'
     stdin_open: true
