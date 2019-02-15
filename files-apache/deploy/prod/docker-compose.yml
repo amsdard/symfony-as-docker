@@ -32,7 +32,7 @@ services:
     stdin_open: true
     tty: true
     labels:
-       traefik.frontend.rule: "Host:{subdomain}.{name}.prod,{name}.prod"
+       traefik.frontend.rule: "HostRegexp:{subdomain}.{name}.prod,{name}.prod"
     env_file:
        - ./docker/webapp/config.env
     links:
