@@ -1,3 +1,4 @@
 {
-    "name": "amsdard/symfony-as-docker"
+    "name": "amsdard/symfony-as-docker",
+    "license": "MIT"
 }
